@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Pseudo Selectors CSS</title>
+    <style>
+    body {background-color: #333333; margin: 0;}
+    form {background-color: #222222; padding: 20px;}
+    input {padding: 10px; outline: none; 
+    border: 1px solid #ffffff; transform:translateY(-8px);
+    }
+    input:focus {border-color: #01999F; width: 500px;} 
+    #search {
+    border: 1px solid transparent; border-radius: 100%;
+    }
+    #search:hover {border-color: white;}
+    button {padding: 3.5px; outline: none;
+    background-color: transparent; 
+    border-color: transparent;}
+
+    p {text-align: center; margin-top: 100px; margin-bottom: 100px;}
+    small {color: #dddddd;}
+    .img_cascade { 
+        padding: 20px; background-color: #999999;  
+    border: 10px solid #cccccc; width: 200px; height: 300px;
+    margin-left: 10%; transition: 0.5s;
+    }
+    #cascad1 {
+        margin-left: initial;
+        transform: rotateY(-180deg);
+        transition: 0.5s;
+    }
+    #cascad2 {
+        transform: rotate(-200deg); transition: 0.5s;
+    }
+
+    #cascad3 {
+        transform: rotateX(180deg); transition: 0.5s;
+    }
+
+    #cascad1:active {
+        border-color: white;
+        background-color: #aaaaaa;
+        transform: rotateY(0deg);
+    }
+
+    #cascad2:hover {
+        border-color: white;
+        background-color: #aaaaaa;
+        transform: rotate(0deg);
+    }
+
+    #cascad3:active {
+        border-color: white;
+        background-color: #aaaaaa;
+        transform: rotateX(0deg);   
+    }
+    small {color: azure; font-size: 70px;}
+    small:hover {color: white;}
+    small::before { content: "[ "; color: #01999F; }
+    small::after { content: " ]"; color: #01999F; }
+    small:hover::before {padding: 20px; transition: 0.5s;}
+    small:hover::after {padding: 20px; transition: 0.5s;}
+    </style>
+</head>
+<body>
+    <form action="#">
+        <label>
+            <input type="text" placeholder="search here">
+        </label>    
+            <button><img id="search" src="images/search-icon.png" alt="cauta"></button>
+        
+    </form>
+
+    <p>
+        <small>CASCADE</small>
+        <br><br>
+        <img id="cascad1" class="img_cascade" src="images/cascada1.jpg" alt="cascada1">
+        <img id="cascad2" class="img_cascade" src="images/cascada2.jpg" alt="cascada2">
+        <img id="cascad3" class="img_cascade" src="images/cascada3.jpg" alt="cascada3">
+    </p>
+</body>
+</html>
